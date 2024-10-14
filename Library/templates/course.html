@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="{% url 'index' %}">Index Page</a><br>
+    <a href="{% url 'book' %}">Book Page</a><br>
+    <a href="{% url 'borrow' %}">Borrow Page</a><br>
+    <a href="{% url 'dbstudent' %}">Student Page</a><br>
+    <a href="{% url 'view' %}">View Page</a><br>
+    <a href="{% url 'mentor' %}">Mentor Page</a><br>
+    <h1>Kolej Profesional Mara Indera Mahkota</h1>
+    <h2>COURSE</h2>
+    <form action="save_update_course/{{x.code}}" method="post">
+        {% csrf_token %}
+        Course Code <input type="text" name="code"><br><br>
+        Description <input type="text" name="desc"><br><br>
+        <input type="submit" value="SAVE"><br><br>
+    </form>
+    {{ message }}
+    <table style="width: 50%; color:black; border:1px solid black;">
+        <tr>
+            <th>CODE</th>
+            <th>DESCRIPTION</th>
+            <th>UPDATE?</th>
+        </tr>
+        {% for x in mycourse %}
+        <tr>
+            <td>{{x.code}}</td>
+            <td>{{x.description}}</td>
+            <td><a href ="update_course/{{x.code}}">Update</a></td>
+            <td><a href ="delete_course/{{x.code}}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    <table>
+</body>
+</html>

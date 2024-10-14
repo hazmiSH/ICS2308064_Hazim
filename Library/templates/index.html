@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="{% url 'book' %}">Index Page</a><br>
+    <a href="{% url 'view' %}">View Page</a><br>
+    <a href="{% url 'borrow' %}">Borrow Page</a><br>
+    <a href="{% url 'dbstudent' %}">Student Page</a><br>
+    <a href="{% url 'course' %}">Course Page</a><br>
+    <a href="{% url 'search_course' %}">Search Page</a><br>
+    <h1>HI MY NAME IS HAZZ</h1> 
+        <h1>Hello {{ firstname }}, how are you?</h1>
+    {% if greeting == 1 %}
+        <h1>Hello</h1>
+        Welcome to Selection
+    {% endif %}
+</body>
+</html>

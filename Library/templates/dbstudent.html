@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>HIIII</h1>
+    <a href="{% url 'index' %}">Index Page</a><br>
+    <a href="{% url 'view' %}">View Page</a><br>
+    <a href="{% url 'borrow' %}">Borrow Page</a><br>
+    <a href="{% url 'book' %}">Book Page</a><br>
+    <a href="{% url 'course' %}">Course Page</a><br>
+    <ul>
+        {% for x in mystudent %}
+            <li>{{ x.student_id }}</li>
+        {% endfor %}
+    </ul>
+    <table style="width: 50%; color:black; border:1px solid black;">
+        <tr>
+            <th>Student ID</th>
+            <th>Student Name</th>
+        </tr>
+        <tr>
+            {% for x in mystudent %}
+            <td>{{ x.student_id }}</td>
+            <td>{{ x.student_name }}</td>
+            {% endfor %}
+        </tr>
+    </table>
+</body>
+</html>

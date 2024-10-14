@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="{% url 'index' %}">Index Page</a><br>
+    <a href="{% url 'book' %}">Book Page</a><br>
+    <a href="{% url 'borrow' %}">Borrow Page</a><br>
+    <a href="{% url 'dbstudent' %}">Student Page</a><br>
+    <a href="{% url 'view' %}">View Page</a><br>
+    <h1>Kolej Profesional Mara Indera Mahkota</h1>
+    <h2>MENTOR</h2>
+    <form action="" method="post">
+        {% csrf_token %}
+        Enter mentor id: <br><br><input type="text" name="id"><br><br>
+        Enter mentor name: <br><br><input type="text" name="name"><br><br>
+        Enter mentor room number: <br><br><input type="text" name="room"><br><br>
+        <input type="submit" value="SUBMIT"><br><br>
+    </form>
+    {{ message }}
+    <table style="width: 50%; color:black; border:1px solid black;">
+        <tr>
+            <th>MENTOR ID</th>
+            <th>NAME</th>
+            <th>ROOM NO</th>
+        </tr>
+        {% for x in mendatabase %}
+        <tr>
+            <td>{{ x.menid }}</td>
+            <td>{{ x.menname}}</td>
+            <td>{{ x.menroomno}}</td>
+        </tr>
+        {% endfor %}
+    </table>    
+</body>
+</html>

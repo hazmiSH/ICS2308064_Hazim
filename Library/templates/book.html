@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="{% url 'index' %}">Index Page</a><br>
+    <a href="{% url 'view' %}">View Page</a><br>
+    <a href="{% url 'borrow' %}">Borrow Page</a><br>
+    <a href="{% url 'dbstudent' %}">Student Page</a><br>
+    <a href="{% url 'course' %}">Course Page</a><br>
+
+    <h>BOOK PAGE</h>
+    <ul>
+        {% for x in mybook %}
+        <li>{{ x.book_id }}</li>
+        <li>{{ x.title }}</li>
+        {% endfor %}
+    </ul>
+    <button onclick="history.back()">Back to HomePage</button>
+</body>
+</html>
